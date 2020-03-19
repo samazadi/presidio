@@ -128,7 +128,8 @@ class EntityRecognizer:
 
             word = text[result.start:result.end]
 
-            # Todo surronding words for unsupported languages doesnt work (due to tokenization)
+            # Todo surronding words for unsupported
+            # languages doesnt work (due to tokenization)
             surrounding_words = self.__extract_surrounding_words(
                 nlp_artifacts=nlp_artifacts,
                 word=word,
