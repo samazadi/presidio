@@ -446,7 +446,6 @@ class TestAnalyzerEngine(TestCase):
                                           entities, language,
                                           all_fields=False)
 
-
         assert len(results) == 1
 
     def test_demo_text(self):
