@@ -26,7 +26,7 @@ class SpacyNlpEngine(NlpEngine):
         """ Execute the SpaCy NLP pipeline on the given text
             and language
         """
-        if self.nlp[language] is not None:
+        if language in self.nlp:
             doc = self.nlp[language](text)
             return self.doc_to_nlp_artifact(doc, language)
 
