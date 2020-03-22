@@ -29,13 +29,13 @@ class SpacyNlpEngine(NlpEngine):
         if self.nlp[language] is not None:
             doc = self.nlp[language](text)
             return self.doc_to_nlp_artifact(doc, language)
-        else:
-            # to do tokens and lemmas should be a simple tokenize so
-            # we will get context support
-            logger.info("'%s' is not loaded for SpaCy, skipping", language)
-            return NlpArtifacts(entities=[], tokens=[],
-                                tokens_indices=[], lemmas=[],
-                                nlp_engine=self, language=language)
+
+        # to do tokens and lemmas should be a simple tokenize so
+        # we will get context support
+        logger.info("'%s' is not loaded for SpaCy, skipping", language)
+        return NlpArtifacts(entities=[], tokens=[],
+                            tokens_indices=[], lemmas=[],
+                            nlp_engine=self, language=language)
 
     def is_stopword(self, word, language):
         """ returns true if the given word is a stop word
