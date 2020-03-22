@@ -178,10 +178,12 @@ class AnalyzerEngine(analyze_pb2_grpc.AnalyzeServiceServicer):
         :return: an array of the found entities in the text
         """
 
+        logger.info("Getting recognizers")
         recognizers = self.registry.get_recognizers(
             language=language,
             entities=entities,
             all_fields=all_fields)
+        logger.info("Got recognizers")
 
         if all_fields:
             if entities:
@@ -196,7 +198,9 @@ class AnalyzerEngine(analyze_pb2_grpc.AnalyzeServiceServicer):
 
         # run the nlp pipeline over the given text, store the results in
         # a NlpArtifacts instance
+        logger.info("Processing using nlp engine")
         nlp_artifacts = self.nlp_engine.process_text(text, language)
+        logger.info("Done processing")
 
         if self.enable_trace_pii and trace:
             self.app_tracer.trace(correlation_id, "nlp artifacts:"

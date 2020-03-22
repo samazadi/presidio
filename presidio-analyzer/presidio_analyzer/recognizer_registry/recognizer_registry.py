@@ -86,22 +86,15 @@ class RecognizerRegistry:
         # filter out unwanted recognizers
         to_return = []
         if all_fields:
-            if language != 'all':
-                to_return = [rec for rec in all_possible_recognizers if
-                             language == rec.supported_language
-                             or rec.supported_language == 'all']
-            else:
-                to_return = all_possible_recognizers
+            to_return = [rec for rec in all_possible_recognizers if
+                         language == rec.supported_language
+                         or rec.supported_language == 'all']
         else:
             for entity in entities:
-                if language != 'all':
-                    subset = [rec for rec in all_possible_recognizers if
-                              entity in rec.supported_entities
-                              and (language == rec.supported_language
-                                   or rec.supported_language == 'all')]
-                else:
-                    subset = [rec for rec in all_possible_recognizers if
-                              entity in rec.supported_entities]
+                subset = [rec for rec in all_possible_recognizers if
+                          entity in rec.supported_entities
+                          and (language == rec.supported_language
+                               or rec.supported_language == 'all')]
 
                 if not subset:
                     logging.warning("Entity %s doesn't have the corresponding"
