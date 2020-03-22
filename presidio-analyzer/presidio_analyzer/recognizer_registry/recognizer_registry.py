@@ -76,7 +76,9 @@ class RecognizerRegistry:
             raise ValueError("No entities provided")
 
         all_possible_recognizers = self.recognizers.copy()
+        logging.info("Getting custom recognizers")
         custom_recognizers = self.get_custom_recognizers()
+        logging.info("Done - getting custom recognizers")
         all_possible_recognizers.extend(custom_recognizers)
         logging.info("Found %d (total) custom recognizers",
                      len(custom_recognizers))
