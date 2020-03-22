@@ -138,10 +138,6 @@ class EntityRecognizer:
             supportive_context_word = self.__find_supportive_word_in_context(
                 surrounding_words, recognizer_context_words)
 
-            self.logger.info("fdfd")
-            self.logger.info(recognizer_context_words)
-            self.logger.info(surrounding_words)
-
             if supportive_context_word != "":
                 result.score += \
                   self.CONTEXT_SIMILARITY_FACTOR
