@@ -7,7 +7,7 @@ from presidio_analyzer.predefined_recognizers import CreditCardRecognizer, \
     EmailRecognizer, IbanRecognizer, IpRecognizer, NhsRecognizer, \
     UsBankRecognizer, UsLicenseRecognizer, \
     UsItinRecognizer, UsPassportRecognizer, UsPhoneRecognizer, \
-    UsSsnRecognizer, SgFinRecognizer, ILIDRecognizer, ILDomainRecognizer \
+    UsSsnRecognizer, SgFinRecognizer, ILIDRecognizer
 
 
 class RecognizerRegistry:
