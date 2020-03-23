@@ -3,7 +3,7 @@ import tldextract
 from presidio_analyzer import Pattern, PatternRecognizer
 
 # pylint: disable=line-too-long
-REGEX = u'(www\.)?[\u05D0-\u05EA]{2,63}\.co\.il'  # noqa: E501'  # noqa: E501
+REGEX = u'(www.)?[\u05D0-\u05EA]{2,63}.co.il'  # noqa: E501'  # noqa: E501
 CONTEXT = ["domain", "ip"]
 
 
